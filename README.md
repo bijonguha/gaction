@@ -3,7 +3,8 @@
 # My Awesome Project
 
 [![Contributors](https://img.shields.io/github/contributors/bijonguha/gaction)](https://github.com/bijonguha/gaction/graphs/contributors)
-![Build Status](https://github.com/bijonguha/gaction/actions/workflows/python-package.yml/badge.svg)
+[![Build Status](https://github.com/bijonguha/gaction/actions/workflows/python-package.yml/badge.svg)](https://github.com/bijonguha/gaction/actions/workflows/python-package.yml)
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bijonguha_gaction&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bijonguha_gaction)
 
 [![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=bijonguha_gaction)

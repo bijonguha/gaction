@@ -62,5 +62,6 @@ jobs:
           -Dsonar.projectKey=bijonguha_gaction
           -Dsonar.organization=bijon-github-projects
           -Dsonar.host.url=https://sonarcloud.io
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
           -Dsonar.python.coverage.reportPaths=coverage.xml
+        env: |
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

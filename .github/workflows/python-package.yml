@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install flake8 pytest pytest-html pytest-cov
+        python -m pip install flake8 pytest pytest-html coverage
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -37,13 +37,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest and generate coverage
       run: |
-        pytest --cov=your_module \
-               --cov-report=xml:coverage.xml \
-               --cov-report=html \
-               --doctest-modules \
-               --junitxml=reports/test-results-${{ matrix.python-version }}.xml \
-               --html=reports/test-report-${{ matrix.python-version }}.html
-
+        coverage run -m pytest tests
+        coverage xml -i
+        coverage html -i
     - name: Upload test results
       uses: actions/upload-artifact@v4
       with:
@@ -51,7 +47,7 @@ jobs:
           path: |
             reports/test-results-${{ matrix.python-version }}.xml
             reports/test-report-${{ matrix.python-version }}.html
-
+            htmlcov/
       if: ${{ always() }}
 
     - name: SonarCloud Scan
